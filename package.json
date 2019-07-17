@@ -1,0 +1,32 @@
+{
+  "name": "simply",
+  "version": "1.0.0",
+  "description": "Simple REST API Framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha test_modules/*.js --exit"
+  },
+  "author": "shuhail",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "chalk-animation": "^1.6.0",
+    "mocha": "^6.1.4",
+    "node-cmd": "^3.0.0",
+    "pluralize": "^8.0.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "dotenv": "^8.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^6.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.3",
+    "validatorjs": "^3.15.1"
+  },
+  "bin": {
+    "simply": "./lib/cli.js"
+  }
+}

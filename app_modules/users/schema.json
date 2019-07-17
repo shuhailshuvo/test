@@ -1,0 +1,110 @@
+{
+  "get": {
+    "input": {
+      "headers": { "token": "required|string|size:24" },
+      "params": { "userId": "string|size:24" },
+      "query": { "test": "numeric", "test2": "numeric" }
+    },
+    "output": {
+      "headers": {},
+      "body": {
+        "name": "string",
+        "email": "string",
+        "password": "string",
+        "mobile": "string",
+        "stores": "array",
+        "stores.*.id": "string",
+        "userType": "required|numeric",
+        "status": "in:ACTIVE,INACTIVE",
+        "deviceToken": "string",
+        "role": "in:c,d",
+        "createdAt": "date",
+        "updatedAt": "date",
+        "_id": "required|string"
+      }
+    }
+  },
+  "post": {
+    "input": {
+      "headers": {},
+      "body": {
+        "name": "required|string",
+        "email": "required|email",
+        "password": "required|string",
+        "mobile": "required|string",
+        "stores": "array",
+        "stores.*.id": "required|string",
+        "userType": "required|numeric",
+        "status": "required|in:ACTIVE,INACTIVE",
+        "deviceToken": "string",
+        "role": "in:c,d",
+        "createdAt": "date",
+        "updatedAt": "date"
+      },
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "put": {
+    "input": {
+      "headers": {},
+      "body": {},
+      "params": { "userId": "required|string|size:24" },
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "patch": {
+    "input": {
+      "headers": {},
+      "body": {},
+      "params": { "userId": "required|string|size:24" },
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "delete": {
+    "input": {
+      "headers": {},
+      "params": { "userId": "required|string|size:24" },
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "mongoose": {
+    "name": "String",
+    "email": "String",
+    "password": "String",
+    "mobile": "String",
+    "userType": {
+      "type": "Number",
+      "Default": 1
+    },
+    "stores": {},
+    "status": {
+      "type": "String",
+      "enum": ["ACTIVE", "INACTIVE"],
+      "default": "ACTIVE"
+    },
+    "deviceToken": {
+      "type": "String",
+      "default": null
+    },
+    "role": "String",
+    "createdAt": { "type": "String" },
+    "updatedAt": { "type": "String" }
+  }
+}

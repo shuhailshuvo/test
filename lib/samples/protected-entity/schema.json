@@ -1,0 +1,61 @@
+{
+  "get": {
+    "input": {
+      "headers": { "token": "required|string" },
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "post": {
+    "input": {
+      "headers": { "token": "required|string" },
+      "body": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "put": {
+    "input": {
+      "headers": { "token": "required|string" },
+      "body": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "patch": {
+    "input": {
+      "headers": { "token": "required|string" },
+      "body": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "delete": {
+    "input": {
+      "headers": { "token": "required|string" },
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "protected": true
+}

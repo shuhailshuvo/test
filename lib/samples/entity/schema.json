@@ -1,0 +1,60 @@
+{
+  "get": {
+    "input": {
+      "headers": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "post": {
+    "input": {
+      "headers": {},
+      "body": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "put": {
+    "input": {
+      "headers": {},
+      "body": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "patch": {
+    "input": {
+      "headers": {},
+      "body": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  },
+  "delete": {
+    "input": {
+      "headers": {},
+      "params": {},
+      "query": {}
+    },
+    "output": {
+      "headers": {},
+      "body": {}
+    }
+  }
+}
