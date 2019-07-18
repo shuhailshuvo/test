@@ -47,6 +47,8 @@ describe("::. Testing user list", () => {
     chai
       .request(app)
       .get("/users")
+      .set({ token: "2345678rctvbynv6b7n8m9,c5v6b7n" })
+      .send(body)
       .end((err, res) => {
         res.should.have.status(200);
         done();
