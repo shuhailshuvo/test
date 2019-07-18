@@ -47,8 +47,6 @@ describe("::. Testing user list", () => {
     chai
       .request(app)
       .get("/users")
-      .set(headers)
-      .send(body)
       .end((err, res) => {
         res.should.have.status(200);
         done();
