@@ -52,5 +52,6 @@ describe("::. Testing user list", () => {
         res.should.have.status(200);
         done();
       });
+    done();
   });
 });
