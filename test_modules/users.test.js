@@ -42,18 +42,16 @@ before(done => {
   }, 1500);
 });
 
-describe("::. " + unit.toUpperCase() + " MODULE ::.", () => {
-  describe("::. Testing " + method + " " + baseUrl, () => {
-    it("Should " + action[method] + " " + unit, done => {
-      chai
-        .request(app)
-        [method](baseUrl)
-        .set(headers)
-        .send(body)
-        .end((err, res) => {
-          res.should.have.status(200);
-          done();
-        });
-    });
+describe("::. Testing user list", () => {
+  it("Should fetch user list " + unit, done => {
+    chai
+      .request(app)
+      .get("/users")
+      .set(headers)
+      .send(body)
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
   });
 });
