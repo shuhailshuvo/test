@@ -32,9 +32,5 @@ pipeline {
        failure {
           slackSend channel: '#general', iconEmoji: '', message: 'Build Failed', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
        }
-       // trigger every-works
-       always {
-           slackSend channel: '#general', iconEmoji: '', message: 'Build Notification Unknown', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
-       }
     }
 }
