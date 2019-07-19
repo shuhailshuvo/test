@@ -21,10 +21,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'npm test'
-            }
-            steps {
-                echo 'Building...'
-                sh "slackSend channel: '#general', iconEmoji: '', message: 'Build Completed', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''"
+                build job: 'slackSend', parameters: [string(channel:'#general', message: "Build End",tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df')]
             }
         }
     }
