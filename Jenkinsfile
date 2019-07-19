@@ -15,11 +15,19 @@ pipeline {
                 echo 'Building...'
                 sh 'npm install'
             }
+            steps {
+                echo 'Building...'
+                sh "slackSend channel: '#general', iconEmoji: '', message: 'Build Starts', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''"
+            }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
                 sh 'npm test'
+            }
+            steps {
+                echo 'Building...'
+                sh "slackSend channel: '#general', iconEmoji: '', message: 'Build Completed', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''"
             }
         }
     }
