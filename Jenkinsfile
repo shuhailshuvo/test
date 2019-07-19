@@ -14,15 +14,27 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'npm install'
-                build job: 'slackSend', parameters: [string(channel:'#general', message: "Build Starts",tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df')]
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
                 sh 'npm test'
-                build job: 'slackSend', parameters: [string(channel:'#general', message: "Build End",tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df')]
             }
         }
+    }
+    post {
+       // only triggered when blue or green sign
+       success {
+           slackSend channel: '#general', iconEmoji: '', message: 'Build Success', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
+       }
+       // triggered when red sign
+       failure {
+          slackSend channel: '#general', iconEmoji: '', message: 'Build Failed', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
+       }
+       // trigger every-works
+       always {
+           slackSend channel: '#general', iconEmoji: '', message: 'Build Notification Unknown', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
+       }
     }
 }
