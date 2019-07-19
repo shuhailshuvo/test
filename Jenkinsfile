@@ -14,9 +14,6 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'npm install'
-            }
-            steps {
-                echo 'Building...'
                 build job: 'slackSend', parameters: [string(channel:'#general', message: "Build Starts",tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df')]
             }
         }
