@@ -23,14 +23,4 @@ pipeline {
             }
         }
     }
-    post {
-       // only triggered when blue or green sign
-       success {
-           slackSend channel: '#general', iconEmoji: '', message: 'Build Success', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
-       }
-       // triggered when red sign
-       failure {
-          slackSend channel: '#general', iconEmoji: '', message: 'Build Failed', tokenCredentialId: '287af604-bb01-4aa1-91dd-43733eba02df', username: ''
-       }
-    }
 }
